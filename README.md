@@ -2,7 +2,7 @@
 
 # What is ServiceNow Mid Sever
 
-[Read here](https://docs.servicenow.com/bundle/kingston-servicenow-platform/page/product/mid-server/reference/r-MIDServer.html)
+[Read here](https://docs.servicenow.com/bundle/newyork-servicenow-platform/page/product/mid-server/concept/mid-server-landing.html)
 
 Why do you need it? Just ignore this repo if you don't know the answer.
 
