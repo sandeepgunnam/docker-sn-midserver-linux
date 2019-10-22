@@ -8,9 +8,9 @@ Why do you need it? Just ignore this repo if you don't know the answer.
 
 # TL;DR;
 
-* **Kingston**: `andrekosak/sn-midserver:kingston`
-* **Kingston for armhf (Raspberry Pi)**: `andrekosak/sn-midserver:kingston-armhf`
-* **Jakarta**: `andrekosak/sn-midserver:jakarta`
+* **NewYork**: `ezrawalgraf/docker-sn-midserver:latest`
+
+
 
 ## Get started right away
 
@@ -20,7 +20,7 @@ $ docker run -d --name sn-mid-server \
   -e 'SN_USER=username' \
   -e 'SN_PASSWD=userpassword' \
   -e 'SN_MID_NAME=sn-mid-server' \
-  andrekosak/sn-midserver:kingston
+  ezrawalgraf/docker-sn-midserver:latest
 ```
 
 or using Docker Compose:
@@ -30,7 +30,7 @@ version: '3'
 services:
   midserver:
     container_name: sn-midserver
-    image: andrekosak/sn-midserver:kingston
+    image: ezrawalgraf/docker-sn-midserver:latest
     network_mode: host
     environment:
       - SN_URL=https://dev00000.service-now.com
@@ -48,7 +48,7 @@ $ docker run -d --name sn-mid-server \
   -e 'SN_PASSWD=password' \
   -e 'SN_MID_NAME=my-mid-server' \
   -v './sn-midserver/logs:/opt/agent/logs' \
-  andrekosak/sn-midserver:kingston
+  ezrawalgraf/docker-sn-midserver:latest
 ```
 
 or using Docker Compose:
@@ -58,7 +58,7 @@ version: '3'
 services:
   midserver:
     container_name: sn-midserver
-    image: andrekosak/sn-midserver:kingston
+    image: ezrawalgraf/docker-sn-midserver:latest
     volumes:
       - ./sn-midserver/logs:/opt/agent/logs
     network_mode: host
