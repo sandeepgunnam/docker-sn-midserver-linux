@@ -8,7 +8,7 @@ Why do you need it? Just ignore this repo if you don't know the answer.
 
 # TL;DR;
 
-* **NewYork**: `ezrawalgraf/docker-sn-midserver:latest`
+* **NewYork**: `ezrawalgraf/snow_mid_docker_new_york:latest`
 
 
 
@@ -20,7 +20,7 @@ $ docker run -d --name sn-mid-server \
   -e 'SN_USER=username' \
   -e 'SN_PASSWD=userpassword' \
   -e 'SN_MID_NAME=sn-mid-server' \
-  ezrawalgraf/docker-sn-midserver:latest
+  ezrawalgraf/snow_mid_docker_new_york:latest
 ```
 
 or using Docker Compose:
@@ -30,7 +30,7 @@ version: '3'
 services:
   midserver:
     container_name: sn-midserver
-    image: ezrawalgraf/docker-sn-midserver:latest
+    image: ezrawalgraf/snow_mid_docker_new_york:latest
     network_mode: host
     environment:
       - SN_URL=https://dev00000.service-now.com
@@ -48,7 +48,7 @@ $ docker run -d --name sn-mid-server \
   -e 'SN_PASSWD=password' \
   -e 'SN_MID_NAME=my-mid-server' \
   -v './sn-midserver/logs:/opt/agent/logs' \
-  ezrawalgraf/docker-sn-midserver:latest
+  ezrawalgraf/snow_mid_docker_new_york:latest
 ```
 
 or using Docker Compose:
@@ -58,7 +58,7 @@ version: '3'
 services:
   midserver:
     container_name: sn-midserver
-    image: ezrawalgraf/docker-sn-midserver:latest
+    image: ezrawalgraf/snow_mid_docker_new_york:latest
     volumes:
       - ./sn-midserver/logs:/opt/agent/logs
     network_mode: host
