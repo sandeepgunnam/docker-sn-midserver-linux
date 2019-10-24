@@ -11,6 +11,12 @@ SN_USER=${SN_USER:-}
 SN_PASSWD=${SN_PASSWD:-}
 SN_MID_NAME=${SN_MID_NAME:-}
 
+#generate random uuid
+APPEND_UUID=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
+
+#combine sn_mid_name and uuid
+SN_MID_NAME_UNIQUE="$SN_MID_NAME-$APPEND_UUID"
+
 checkConf () {
   if [ ! -e $CONF_FILE ]
     then
@@ -21,7 +27,7 @@ checkConf () {
 
 generateConf () {
   # Setup config
-  /opt/fill-config-parameter $CONF_FILE name ${SN_MID_NAME}
+  /opt/fill-config-parameter $CONF_FILE name ${SN_MID_NAME_UNIQUE}
   /opt/fill-config-parameter $CONF_FILE mid.instance.username ${SN_USER}
   /opt/fill-config-parameter $CONF_FILE mid.instance.password ${SN_PASSWD}
   /opt/fill-config-parameter $CONF_FILE url ${SN_URL}
