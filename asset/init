@@ -74,6 +74,7 @@ midStart () {
   checkConf
   # start supervisord
   echo "Starting supervisord..."
+  tail -F /opt/agent/logs/agent0.log.0 > /proc/1/fd/1 &
   exec /usr/bin/supervisord -c /opt/supervisord.conf
 }
 
