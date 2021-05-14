@@ -24,7 +24,7 @@ RUN wget --no-check-certificate \
     chmod 755 /opt/init && \
     chmod 755 /opt/fill-config-parameter && \
     rm -rf /tmp/*
-
+USER root
 EXPOSE 80 443
 
 ENTRYPOINT ["/opt/init"]
