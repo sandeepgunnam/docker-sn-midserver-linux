@@ -2,6 +2,8 @@ FROM ubuntu:20.04
 
 LABEL maintainer="Mike Mesri"
 
+USER root
+
 # To get rid of error messages like "debconf: unable to initialize frontend: Dialog":
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
@@ -24,7 +26,7 @@ RUN wget --no-check-certificate \
     chmod 755 /opt/init && \
     chmod 755 /opt/fill-config-parameter && \
     rm -rf /tmp/*
-USER root
+
 EXPOSE 80 443
 
 ENTRYPOINT ["/opt/init"]
